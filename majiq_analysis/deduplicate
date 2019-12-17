@@ -1,0 +1,24 @@
+#! /bin/bash
+#$ -V
+#$ -wd /scr1/users/yangk4/bonini/
+#$ -l h_vmem=6G
+#$ -l m_mem_free=6G
+#$ -pe smp 15 -binding linear:15
+module load SRA-Toolkit
+module load jdk
+module load python/3.6
+module load gcc8
+module load SAMtools
+module load picard
+
+cd ~/scratch/bonini
+for b in *.bam
+do
+    new=$(echo $b| cut -d'.' -f 1)
+    java -XX:ParallelGCThreads=14 -XX:+UseParallelGC -Xmx80g -Xms40g -jar $EBROOTPICARD/picard.jar MarkDuplicates \
+      I=${b} \
+      O=${new}.deduplicated.bam \
+      M=deduplication_metrics.txt \
+      REMOVE_DUPLICATES=true
+    samtools index -@ 14 ${new}.deduplicated.bam 
+done
