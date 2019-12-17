@@ -1,0 +1,14 @@
+[info]
+readlen=150
+bamdirs=./
+genome=dmel
+genome_path=/scr1/users/yangk4/ref/genomes/dmel/
+[experiments]
+Ime4_HS_Input=Rep1_Input_Ime4_HS.sort,Rep2_Input_Ime4_HS.sort,Rep3_Input_Ime4_HS.sort
+Ime4_HS_m6A=Rep1_m6AIP_Ime4_HS.sort,Rep2_m6AIP_Ime4_HS.sort,Rep3_m6AIP_Ime4_HS.sort
+Ime4_control_Input=Rep1_Input_Ime4_control.sort,Rep2_Input_Ime4_control.sort,Rep3_Input_Ime4_control.sort
+Ime4_control_m6A=Rep1_m6AIP_Ime4_control.sort,Rep2_m6AIP_control.sort,Rep3_m6AIP_control.sort
+Mcherry_HS_Input=Rep1_Input_Mcherry_HS.sort,Rep2_Input_Mcherry_HS.sort,Rep3_Input_Mcherry_HS.sort
+Mcherry_HS_m6A=Rep1_m6AIP_Mcherry_HS.sort,Rep2_m6AIP_Mcherry_HS.sort,Rep3_m6AIP_Mcherry_HS.sort
+Mcherry_control_Input=Rep1_Input_Mcherry_control.sort,Rep2_Input_Mcherry_control.sort,Rep3_Input_Mcherry_control.sort
+Mcherry_control_m6A=Rep1_m6AIP_Mcherry_control.sort,Rep2_m6AIP_control.sort,Rep3_m6AIP_control.sort
