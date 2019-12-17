@@ -1,0 +1,30 @@
+#! /bin/bash
+#$ -V
+#$ -wd /scr1/users/yangk4/bonini/
+#$ -l h_vmem=6G
+#$ -l m_mem_free=6G
+#$ -pe smp 9 -binding linear:9
+module load SRA-Toolkit
+module load jdk
+module load python/3.6
+module load gcc8
+module load SAMtools
+
+source /home/yangk4/majiq_2_install/env/bin/activate
+majiq build ~/scratch/ref/db/Drosophila_melanogaster.BDGP6.22.98.chr.gff3 -c ./majiq/settings.txt --output ./majiq/build --nproc 8 --simplify
+
+#Ime4 HS
+majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Ime4_HS.sort.majiq ./majiq/build/Rep2_Input_Ime4_HS.sort.majiq ./majiq/build/Rep3_Input_Ime4_HS.sort.majiq -grp2 ./majiq/build/Rep1_m6AIP_Ime4_HS.sort.majiq ./majiq/build/Rep2_m6AIP_Ime4_HS.sort.majiq ./majiq/build/Rep3_m6AIP_Ime4_HS.sort.majiq --names Ime4_HS_Input Ime4_HS_m6A -j 8 -o ./majiq_1/
+voila ./majiq/Ime4_HS_Input_Ime4_HS_m6A.psi.voila ./majiq/build/splicegraph.sql -f Ime4_HS.tsv -j 8 --show-all
+
+#Mcherry HS
+majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Mcherry_HS.sort.majiq ./majiq/build/Rep2_Input_Mcherry_HS.sort.majiq ./majiq/build/Rep3_Input_Mcherry_HS.sort.majiq -grp2 ./majiq/build/Rep1_m6AIP_Mcherry_HS.sort.majiq ./majiq/build/Rep2_m6AIP_Mcherry_HS.sort.majiq ./majiq/build/Rep3_m6AIP_Mcherry_HS.sort.majiq --names Mcherry_HS_Input Mcherry_HS_m6A -j 8 -o ./majiq/
+voila ./majiq/Mcherry_HS_Input_Mcherry_HS_m6A.psi.voila ./majiq/build/splicegraph.sql -f Mcherry_HS.tsv -j 8 --show-all
+
+#Ime4 control
+majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Ime4_control.sort.majiq ./majiq/build/Rep2_Input_Ime4_control.sort.majiq ./majiq/build/Rep3_Input_Ime4_control.sort.majiq -grp2 ./majiq/build/Rep1_m6AIP_Ime4_control.sort.majiq ./majiq/build/Rep2_m6AIP_Ime4_control.sort.majiq ./majiq/build/Rep3_m6AIP_Ime4_control.sort.majiq --names Ime4_control_Input Ime4_control_m6A -j 8 -o ./majiq/
+voila ./majiq/Ime4_control_Input_Ime4_control_m6A.psi.voila ./majiq/build/splicegraph.sql -f Ime4_control.tsv -j 8 --show-all
+
+#Mcherry control
+majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Mcherry_control.sort.majiq ./majiq/build/Rep2_Input_Mcherry_control.sort.majiq ./majiq/build/Rep3_Input_Mcherry_control.sort.majiq -grp2 ./majiq/build/Rep1_m6AIP_Mcherry_control.sort.majiq ./majiq/build/Rep2_m6AIP_Mcherry_control.sort.majiq ./majiq/build/Rep3_m6AIP_Mcherry_control.sort.majiq --names Mcherry_control_Input Mcherry_control_m6A -j 8 -o ./majiq/
+voila ./majiq/Mcherry_control_Input_Mcherry_control_m6A.psi.voila  ./majiq/build/splicegraph.sql -f Mcherry_control.tsv -j 8 --show-all
