@@ -15,16 +15,16 @@ majiq build ~/scratch/ref/db/dm6.gff3 -c ./majiq/settings.txt --output ./majiq/b
 
 #Ime4 HS
 majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Ime4_HS.deduplicated.majiq ./majiq/build/Rep2_Input_Ime4_HS.deduplicated.majiq ./majiq/build/Rep3_Input_Ime4_HS.deduplicated.majiq -grp2 ./majiq/build/Rep1_m6AIP_Ime4_HS.deduplicated.majiq ./majiq/build/Rep2_m6AIP_Ime4_HS.deduplicated.majiq ./majiq/build/Rep3_m6AIP_Ime4_HS.deduplicated.majiq --names Ime4_HS_Input Ime4_HS_m6A -j 8 -o ./majiq/
-voila tsv ./majiq/Ime4_HS_Input_Ime4_HS_m6A.psi.voila ./majiq/build/splicegraph.sql -f Ime4_HS.tsv -j 8 --show-all
+voila tsv ./majiq/Ime4_HS_Input_Ime4_HS_m6A.deltapsi.voila ./majiq/build/splicegraph.sql -f Ime4_HS.tsv -j 8 --show-all
 
 #Mcherry HS
 majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Mcherry_HS.deduplicated.majiq ./majiq/build/Rep2_Input_Mcherry_HS.deduplicated.majiq ./majiq/build/Rep3_Input_Mcherry_HS.deduplicated.majiq -grp2 ./majiq/build/Rep1_m6AIP_Mcherry_HS.deduplicated.majiq ./majiq/build/Rep2_m6AIP_Mcherry_HS.deduplicated.majiq ./majiq/build/Rep3_m6AIP_Mcherry_HS.deduplicated.majiq --names Mcherry_HS_Input Mcherry_HS_m6A -j 8 -o ./majiq/
-voila tsv ./majiq/Mcherry_HS_Input_Mcherry_HS_m6A.psi.voila ./majiq/build/splicegraph.sql -f Mcherry_HS.tsv -j 8 --show-all
+voila tsv ./majiq/Mcherry_HS_Input_Mcherry_HS_m6A.deltapsi.voila ./majiq/build/splicegraph.sql -f Mcherry_HS.tsv -j 8 --show-all
 
 #Ime4 control
 majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Ime4_control.deduplicated.majiq ./majiq/build/Rep2_Input_Ime4_control.deduplicated.majiq ./majiq/build/Rep3_Input_Ime4_control.deduplicated.majiq -grp2 ./majiq/build/Rep1_m6AIP_Ime4_control.deduplicated.majiq ./majiq/build/Rep2_m6AIP_Ime4_control.deduplicated.majiq ./majiq/build/Rep3_m6AIP_Ime4_control.deduplicated.majiq --names Ime4_control_Input Ime4_control_m6A -j 8 -o ./majiq/
-voila tsv ./majiq/Ime4_control_Input_Ime4_control_m6A.psi.voila ./majiq/build/splicegraph.sql -f Ime4_control.tsv -j 8 --show-all
+voila tsv ./majiq/Ime4_control_Input_Ime4_control_m6A.deltapsi.voila ./majiq/build/splicegraph.sql -f Ime4_control.tsv -j 8 --show-all
 
 #Mcherry control
 majiq deltapsi -grp1 ./majiq/build/Rep1_Input_Mcherry_control.deduplicated.majiq ./majiq/build/Rep2_Input_Mcherry_control.deduplicated.majiq ./majiq/build/Rep3_Input_Mcherry_control.deduplicated.majiq -grp2 ./majiq/build/Rep1_m6AIP_Mcherry_control.deduplicated.majiq ./majiq/build/Rep2_m6AIP_Mcherry_control.deduplicated.majiq ./majiq/build/Rep3_m6AIP_Mcherry_control.deduplicated.majiq --names Mcherry_control_Input Mcherry_control_m6A -j 8 -o ./majiq/
-voila tsv ./majiq/Mcherry_control_Input_Mcherry_control_m6A.psi.voila  ./majiq/build/splicegraph.sql -f Mcherry_control.tsv -j 8 --show-all
+voila tsv ./majiq/Mcherry_control_Input_Mcherry_control_m6A.deltapsi.voila  ./majiq/build/splicegraph.sql -f Mcherry_control.tsv -j 8 --show-all
